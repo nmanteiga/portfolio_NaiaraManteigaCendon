@@ -46,8 +46,10 @@ export function initCursor() {
     const k = 1 - Math.pow(0.0008, dt);
     ringPos.x += (mouse.x - ringPos.x) * k;
     ringPos.y += (mouse.y - ringPos.y) * k;
-    dot.style.transform = `translate(${mouse.x}px, ${mouse.y}px)`;
-    ring.style.transform = `translate(${ringPos.x}px, ${ringPos.y}px)`;
+    // Se mueven con "translate" y no con "transform": el giro del aro (rotate) se aplica después
+    // de translate, así gira sobre sí mismo y no alrededor de la esquina de la pantalla
+    dot.style.translate = `${mouse.x}px ${mouse.y}px`;
+    ring.style.translate = `${ringPos.x}px ${ringPos.y}px`;
     if (mouse.seen) cat.update(dt);
     requestAnimationFrame(loop);
   };
