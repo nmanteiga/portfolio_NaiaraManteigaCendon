@@ -21,6 +21,7 @@
       <nav aria-label="Secciones">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#gdg">GDG</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
@@ -90,30 +91,33 @@
           <div class="about__text">
             <p class="section-label reveal"><span>01</span> Sobre mí</p>
             <h2 class="about__heading reveal">
-              Programo, investigo<br /> y <em>construyo mundos</em>.
+              Programo y sobrevivo<br /> a base de <em>cafeína</em>.
             </h2>
 
             <div class="about__bio reveal">
               <p>
                 Soy estudiante de último curso de <strong>Ingeniería Informática</strong> en la Universidad de A&nbsp;Coruña,
-                en la mención de Computación. En mi TFG investigo cómo mejorar el algoritmo <strong>NEAT</strong>
-                aplicando <strong>Spiking Neural Networks</strong> y aprendizaje R-STDP.
+                en la mención de Computación. En mi TFG investigo cómo mejorar el algoritmo 
+                <strong>NeuroEvolution of Augmented Toplogies (NEAT)</strong> aplicando <strong>Spiking Neural Networks (SNNs)</strong> 
+                y aprendizaje con <strong>Reward-Modulated Spike-Timing-Dependent Plasticity (R-STDP)</strong>.
               </p>
               <p>
-                Me apasionan la inteligencia artificial, la algoritmia y la investigación aplicada, pero también
-                todo lo que tenga un punto creativo: de los modelos 3D a los videojuegos. La habitación de arriba
-                la modelé y animé yo.
+                Me apasionan la inteligencia artificial (sobre todo el machine learning y business intelligence), 
+                la algoritmia y la investigación aplicada, pero también todo lo que tenga un punto creativo: de los 
+                modelos 3D a los videojuegos (la habitación de arriba la modelé y animé yo). Gracias a los videojuegos
+                decidí a los 10 años que sería ingeniera informática y hago todo lo posible por cumplir esa meta desde entonces.
               </p>
               <p>
                 Fuera de clase, cofundé <strong>GDG A Coruña</strong>, donde llevo la comunicación y organizo eventos
-                tech para la comunidad gallega.
+                tech para la comunidad gallega. Y, proximamente, estaré trabajando con el equipo de marketing de WordPress
+                (pero esto no es más que un adelanto).
               </p>
             </div>
 
             <dl class="facts reveal">
               <div><dt>Base</dt><dd>A Coruña, Galicia</dd></div>
               <div><dt>Graduación</dt><dd>Febrero 2027</dd></div>
-              <div><dt>Idiomas</dt><dd>Español y gallego nativos · inglés C1</dd></div>
+              <div><dt>Idiomas</dt><dd>Español y gallego nativos · inglés C2.1</dd></div>
               <div><dt>Mundo</dt><dd>2 años en EE.&nbsp;UU. · Erasmus en Hungría</dd></div>
             </dl>
 
@@ -158,8 +162,8 @@
             <h2 class="reveal">Construyendo comunidad <em>con sentidiño</em>.</h2>
             <p class="gdg__lead reveal">
               En agosto de 2024 cofundé <strong>Google Developer Group A Coruña</strong>, donde soy Communication Manager.
-              Organizamos charlas, talleres y hackathons en A Coruña, en otras partes de Galicia y online, y yo dirijo el
-              equipo creativo: la imagen de cada evento, los diseños y las campañas en redes.
+              Organizamos charlas, talleres y hackathons en A Coruña, en otras partes de Galicia y online. Yo principalmente 
+              dirijo el equipo creativo: la imagen de cada evento, los diseños y las campañas en redes.
             </p>
             <ul class="gdg__stats reveal">
               <li><strong data-gdg-count>26</strong> eventos organizados y coorganizados</li>
@@ -197,9 +201,28 @@
         <!-- Se rellena con las imágenes de contents/gdg (src/gdg.js) -->
         <div class="gdg__designs" data-gdg-designs hidden>
           <h3>Mis diseños para GDG</h3>
-          <p class="gdg__designs-intro">Cartelería, piezas para redes y acreditaciones, evento a evento.</p>
+          <p class="gdg__designs-intro">Aquí comparto algunos de los diseños que he hecho a mano a lo largo de mi
+            trayectoria en GDG, algunos no están subidos, pero esto es un pequeño resumen.
+          </track>.</p>
           <div data-designs-list></div>
         </div>
+      </section>
+
+      <!-- ── Proyectos ── -->
+      <section class="projects" id="proyectos">
+        <p class="section-label reveal"><span>03</span> Proyectos</p>
+        <h2 class="reveal">Cosas que he <em>construido</em>.</h2>
+        <p class="projects__intro reveal">
+          De la investigación de mi TFG a hackathons de 36 horas: proyectos personales, de la carrera y de competiciones. Esperemos que esta colección vaya creciendo poco a poco ;)
+          NOTA: el código del Körber Innovathon no está disponible ya que la empresa <strong>compró el proyecto</strong> y se requirió firmar 
+          un NDA para su realización.
+        </p>
+        <!-- Se rellena desde src/data/projects.js (src/projects.js) -->
+        <div class="projects-grid" data-projects></div>
+        <a class="btn btn--ghost projects__more reveal" href="https://github.com/nmanteiga" target="_blank" rel="noopener">
+          Más en mi GitHub
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+        </a>
       </section>
 
       <!-- ── Contacto ── -->
@@ -219,9 +242,10 @@
       <p>Feito con cariño en A Coruña · Naiara Manteiga Cendón</p>
     </footer>
 
-    <dialog class="lightbox" data-lightbox aria-label="Diseño ampliado">
+    <dialog class="lightbox" data-lightbox aria-label="Imagen ampliada">
       <figure>
         <img alt="" />
+        <video controls playsinline muted loop hidden></video>
         <figcaption></figcaption>
       </figure>
       <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Diseño anterior">←</button>
