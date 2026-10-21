@@ -4,6 +4,7 @@ import { initTilt } from './tilt.js';
 import { initPolaroids } from './polaroids.js';
 import { initGdg } from './gdg.js';
 import { initGdgOrbit } from './gdg-orbit.js';
+import { initProjects } from './projects.js';
 
 // Cabecera 3D
 const hero = document.querySelector('.hero');
@@ -24,6 +25,9 @@ document.querySelectorAll('[data-polaroids]').forEach(initPolaroids);
 initGdg(document.querySelector('#gdg'));
 const orbit = initGdgOrbit(document.querySelector('[data-gdg-orbit]'));
 if (import.meta.env.DEV) window.__orbit = orbit;
+
+// Proyectos (antes de preparar las animaciones de aparición, porque crea elementos .reveal)
+initProjects(document.querySelector('#proyectos'));
 
 // Fondo de la barra de navegación al hacer scroll
 const nav = document.querySelector('.nav');

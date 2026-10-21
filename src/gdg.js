@@ -1,6 +1,7 @@
 import snapshot from './data/gdg-events.json';
 import { fetchGdgEvents } from './gdg-api.js';
 import { DESIGN_GROUPS } from './data/gdg-designs.js';
+import { openLightbox } from './lightbox.js';
 
 // Diseños: cualquier imagen que se deje en contents/gdg aparece sola en la galería, agrupada por
 // evento según src/data/gdg-designs.js. Si se llama "logo" (logo.png…) se usa como logo de la sección.
@@ -189,37 +190,14 @@ function renderDesigns(root) {
   initLightbox(list, groups);
 }
 
-// Visor a pantalla completa, con flechas para pasar por los diseños del mismo evento
+// Al pulsar un diseño se abre el visor con los del mismo evento
 function initLightbox(list, groups) {
-  const dialog = document.querySelector('[data-lightbox]');
-  const img = dialog.querySelector('img');
-  const caption = dialog.querySelector('figcaption');
-  let group = null;
-  let index = 0;
-
-  function show(i) {
-    index = (i + group.items.length) % group.items.length;
-    img.src = group.items[index].full;
-    img.alt = `${group.title}: diseño ${index + 1}`;
-    caption.textContent = `${group.title} · ${index + 1}/${group.items.length}`;
-    dialog.classList.toggle('is-single', group.items.length < 2);
-  }
-
   list.addEventListener('click', (e) => {
     const btn = e.target.closest('.design');
     if (!btn) return;
-    group = groups[Number(btn.dataset.group)];
-    show(Number(btn.dataset.index));
-    dialog.showModal();
-  });
-  dialog.addEventListener('click', (e) => {
-    if (e.target.closest('[data-lightbox-prev]')) show(index - 1);
-    else if (e.target.closest('[data-lightbox-next]')) show(index + 1);
-    else if (e.target === dialog || e.target.closest('[data-lightbox-close]')) dialog.close();
-  });
-  dialog.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') show(index - 1);
-    if (e.key === 'ArrowRight') show(index + 1);
+    const group = groups[Number(btn.dataset.group)];
+    const items = group.items.map((it, i) => ({ src: it.full, alt: `${group.title}: diseño ${i + 1}` }));
+    openLightbox(items, Number(btn.dataset.index), group.title);
   });
 }
 
