@@ -5,13 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/fetch-gdg-events.mjs",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "eventos": "node scripts/fetch-gdg-events.mjs"
   },
   "dependencies": {
     "three": "0.180.0"
   },
   "devDependencies": {
-    "vite": "7.3.7"
+    "vite": "7.3.7",
+    "vite-imagetools": "10.0.1"
   }
 }

@@ -20,6 +20,7 @@
       <a class="nav__logo" href="#top" aria-label="Inicio">N<span>M</span></a>
       <nav aria-label="Secciones">
         <a href="#sobre-mi">Sobre mí</a>
+        <a href="#gdg">GDG</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </header>
@@ -149,6 +150,58 @@
         </ul>
       </section>
 
+      <!-- ── GDG A Coruña ── -->
+      <section class="gdg" id="gdg">
+        <div class="gdg__intro">
+          <div class="gdg__text">
+            <p class="section-label reveal"><span>02</span> Comunidad</p>
+            <h2 class="reveal">Construyendo comunidad <em>con sentidiño</em>.</h2>
+            <p class="gdg__lead reveal">
+              En agosto de 2024 cofundé <strong>Google Developer Group A Coruña</strong>, donde soy Communication Manager.
+              Organizamos charlas, talleres y hackathons en A Coruña, en otras partes de Galicia y online, y yo dirijo el
+              equipo creativo: la imagen de cada evento, los diseños y las campañas en redes.
+            </p>
+            <ul class="gdg__stats reveal">
+              <li><strong data-gdg-count>26</strong> eventos organizados y coorganizados</li>
+              <li><strong>251</strong> asistentes en el DevFest 2025</li>
+              <li><strong>~80</strong> participantes en el Hacktoberfest 2025</li>
+            </ul>
+            <a class="btn btn--ghost reveal" href="https://gdg.community.dev/gdg-a-coruna/" target="_blank" rel="noopener">
+              GDG A Coruña en Bevy
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+            </a>
+          </div>
+          <div class="gdg__visual reveal">
+            <div class="gdg__logo" data-gdg-logo aria-hidden="true">
+              <span class="gdg__logo-fallback">GDG<br /><em>A Coruña</em></span>
+            </div>
+            <!-- Piezas 3D orbitando alrededor del logo (src/gdg-orbit.js) -->
+            <canvas class="gdg__orbit" data-gdg-orbit aria-hidden="true"></canvas>
+          </div>
+        </div>
+
+        <!-- Se rellena con los eventos de Bevy (src/gdg.js) -->
+        <article class="next-event reveal" data-gdg-next hidden></article>
+
+        <div class="gdg__events">
+          <div class="gdg__events-head">
+            <h3>Eventos que hemos hecho</h3>
+            <div class="track-nav">
+              <button type="button" data-events-prev aria-label="Eventos anteriores">←</button>
+              <button type="button" data-events-next aria-label="Más eventos">→</button>
+            </div>
+          </div>
+          <ol class="events-track" data-gdg-events></ol>
+        </div>
+
+        <!-- Se rellena con las imágenes de contents/gdg (src/gdg.js) -->
+        <div class="gdg__designs" data-gdg-designs hidden>
+          <h3>Mis diseños para GDG</h3>
+          <p class="gdg__designs-intro">Cartelería, piezas para redes y acreditaciones, evento a evento.</p>
+          <div data-designs-list></div>
+        </div>
+      </section>
+
       <!-- ── Contacto ── -->
       <section class="contact" id="contacto">
         <p class="section-label reveal"><span>✦</span> Contacto</p>
@@ -165,6 +218,16 @@
     <footer class="footer">
       <p>Feito con cariño en A Coruña · Naiara Manteiga Cendón</p>
     </footer>
+
+    <dialog class="lightbox" data-lightbox aria-label="Diseño ampliado">
+      <figure>
+        <img alt="" />
+        <figcaption></figcaption>
+      </figure>
+      <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Diseño anterior">←</button>
+      <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Diseño siguiente">→</button>
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Cerrar">×</button>
+    </dialog>
 
     <script type="module" src="/src/main.js"></script>
   </body>

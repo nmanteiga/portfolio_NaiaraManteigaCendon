@@ -1,0 +1,239 @@
+{
+  "fetchedAt": "2026-10-21T13:36:47.970Z",
+  "events": [
+    {
+      "id": 133007,
+      "title": "Hacktoberfest 2026 👩‍💻👨‍💻",
+      "start": "2026-10-24T08:00:00Z",
+      "end": "2026-10-24T19:00:00Z",
+      "url": "https://gdg.community.dev/e/mzc6kg/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_DX6paB8",
+      "summary": "El Hacktoberfest es la ocasión perfecta para involucrarte en proyectos reales de software libre 🚀, conocer a más gente del ámbito tecnológico 🤝 y explorar herramientas y tecnologías nuevas 🔧. Da igual la experiencia que tengas: siempre hay algo que descubrir y personas con las que compartir. ¡Participa, aporta y vive la experiencia de la comunidad! 💻✨"
+    },
+    {
+      "id": 133026,
+      "title": "WordCamp Galicia - A Coruña",
+      "start": "2026-10-16T07:00:00Z",
+      "end": "2026-10-18T12:00:00Z",
+      "url": "https://gdg.community.dev/e/m2farb/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_bxDHVkc",
+      "summary": "GDG A Coruña estará por el recinto de la WordCamp Galicia, este año celebrada en A Coruña, pásate a conocernos :)"
+    },
+    {
+      "id": 127378,
+      "title": "AI Paper Reading Club - Benchmarking - Measuring Massive Multitask Language Understanding (MMLU) | S01E06",
+      "start": "2026-07-14T17:00:00Z",
+      "end": "2026-07-14T18:00:00Z",
+      "url": "https://gdg.community.dev/e/mc4x9e/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_zruNIMa",
+      "summary": "En esta sexta sesión, cerramos por todo lo alto la primera temporada de nuestro AI Paper Reading Club con un tema crucia..."
+    },
+    {
+      "id": 125331,
+      "title": "Mesa redonda de comunidades",
+      "start": "2026-07-02T17:00:00Z",
+      "end": "2026-07-02T19:30:00Z",
+      "url": "https://gdg.community.dev/e/mw8wd6/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_apIljMc",
+      "summary": "Acaba a tempada e aquí estamos de novo. Nos xuntamos algunhas das comunidades tecnolóxicas da cidade para falar e compar..."
+    },
+    {
+      "id": 124852,
+      "title": "AI Paper Reading Club - Attention is all you need - Transformers | S01E05",
+      "start": "2026-06-02T17:00:00Z",
+      "end": "2026-06-02T18:00:00Z",
+      "url": "https://gdg.community.dev/e/mjrqws/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_Kr4YZtn",
+      "summary": "En esta quinta sesión, nos sumergiremos en uno de los artículos más influyentes de la historia del aprendizaje automátic..."
+    },
+    {
+      "id": 121745,
+      "title": "Kubernetes & AI, con sentidiño",
+      "start": "2026-05-13T16:30:33Z",
+      "end": "2026-05-13T20:00:33Z",
+      "url": "https://gdg.community.dev/e/m8tvv9/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_YCkliKX",
+      "summary": "Un encuentro técnico en A Coruña para hablar de Kubernetes, IA en producción y supervisión responsable, con charlas, mes..."
+    },
+    {
+      "id": 121558,
+      "title": "AI Paper Reading Club - Ask a Local: Detecting Hallucinations with Specialized Model Divergence | S01E04",
+      "start": "2026-05-05T15:00:00Z",
+      "end": "2026-05-05T16:00:56Z",
+      "url": "https://gdg.community.dev/e/mrhc85/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_RxOyUi2",
+      "summary": "En esta cuarta sesión, Aldán Creo Mariño nos comentará su paper Ask a Local: Detecting Hallucinations With Specialized M..."
+    },
+    {
+      "id": 121061,
+      "title": "Ver sin ver: accesibilidad, lectores de pantalla e IA",
+      "start": "2026-04-23T17:30:00Z",
+      "end": "2026-04-23T19:00:00Z",
+      "url": "https://gdg.community.dev/e/mpu7qk/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_zIlR6ju",
+      "summary": "En esta sesión vamos a profundizar en metodologías avanzadas con el lector de pantalla VoiceOver. Exploraremos cómo la I..."
+    },
+    {
+      "id": 118482,
+      "title": "AI Paper Reading Club - Machine Learning: Generative Adversarial Networks | S01E03",
+      "start": "2026-04-07T15:00:00Z",
+      "end": "2026-04-07T16:00:00Z",
+      "url": "https://gdg.community.dev/e/mcbqgs/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_0ZZiq8a",
+      "summary": "En esta tercera sesión, Brais Fontán Costas contará todo sobre las Redes Generativas Antagónicas (GANs) dentro del apren..."
+    },
+    {
+      "id": 115376,
+      "title": "Conoce a GDG A Coruña en la Lareira",
+      "start": "2026-03-20T08:00:00Z",
+      "end": "2026-03-21T19:00:00Z",
+      "url": "https://gdg.community.dev/e/mmfc5v/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_UZVhRPn",
+      "summary": "Los días 20 y 21 de marzo en A Coruña, estaremos en Lareira Conf 2026, un evento pensado precisamente para reunir a la c..."
+    },
+    {
+      "id": 115371,
+      "title": "Día de la Mujer 2026",
+      "start": "2026-03-06T10:00:00Z",
+      "end": "2026-03-06T11:00:00Z",
+      "url": "https://gdg.community.dev/e/m922sc/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_fGmNtkN",
+      "summary": "¿Te vienes a charlar sobre tecnología? 💻Con motivo del Día de la Mujer en las TIC, nos reunimos con tres compañeras que ..."
+    },
+    {
+      "id": 116916,
+      "title": "AI Paper Reading Club - U-Net: Convolutional Networks for Biomedical Image Segmentation | S01E02",
+      "start": "2026-03-03T16:00:00Z",
+      "end": "2026-03-03T17:00:00Z",
+      "url": "https://gdg.community.dev/e/mj42qf/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_j8tqdxl",
+      "summary": "Tras el éxito de nuestra sesión inaugural, desde GDG Ourense y GDG A Coruña nos complace invitaros a la segunda sesión d..."
+    },
+    {
+      "id": 112159,
+      "title": "A11y en la práctica: lo que tu lector de pantalla sabe de tu web (y tú no)",
+      "start": "2026-02-12T18:30:00Z",
+      "end": "2026-02-12T19:30:00Z",
+      "url": "https://gdg.community.dev/e/mzh9dv/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_pW0KG8G",
+      "summary": "¿Alguna vez has probado a usar tu propia web sin mirar la pantalla?En esta charla veremos cómo un lector de pantalla y o..."
+    },
+    {
+      "id": 113805,
+      "title": "AI Paper Reading Club - Introducción | S01E01",
+      "start": "2026-02-03T16:00:00Z",
+      "end": "2026-02-03T17:00:00Z",
+      "url": "https://gdg.community.dev/e/myz3m8/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_pLplhtt",
+      "summary": "Únete a nosotros en el primer encuentro del AI Paper Reading Club, donde exploraremos cómo se crea la ciencia tecnológic..."
+    },
+    {
+      "id": 101514,
+      "title": "Google DevFest 2025",
+      "start": "2025-11-21T09:00:00Z",
+      "end": "2025-11-22T20:00:00Z",
+      "url": "https://gdg.community.dev/e/mcehnm/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/blob_NmG6FO0",
+      "summary": "El 21 y 22 de Noviembre no te puedes perder el DevFest Galicia 2025 organizado por GDG A Coruña y GDG Ourense!"
+    },
+    {
+      "id": 102951,
+      "title": "Hacktoberfest 2025 👩‍💻👨‍💻",
+      "start": "2025-10-18T08:00:00Z",
+      "end": "2025-10-18T19:00:00Z",
+      "url": "https://gdg.community.dev/e/m544cd/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/GDG%20A%20Coru%C3%B1a%20Bevy-EventThumb_N3cTNb8.png",
+      "summary": "El Hacktoberfest es la ocasión perfecta para involucrarte en proyectos reales de software libre 🚀, conocer a más gente del ámbito tecnológico 🤝 y explorar herramientas y tecnologías nuevas 🔧. Da igual la experiencia que tengas: siempre hay algo que descubrir y personas con las que compartir. ¡Participa, aporta y vive la experiencia de la comunidad! 💻✨"
+    },
+    {
+      "id": 93379,
+      "title": "Build with AI - Recetas Mágicas para Android Studio con Gemini",
+      "start": "2025-06-25T16:00:00Z",
+      "end": "2025-06-25T17:00:00Z",
+      "url": "https://gdg.community.dev/e/mgugss/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/BWAI25-EventThumb-01_7YYrPMm.png",
+      "summary": "¿Y si te dijéramos que Android Studio ahora tiene su propia varita mágica? 🪄 En esta charla descubrirás cómo Gemini 2.5 ..."
+    },
+    {
+      "id": 95100,
+      "title": "IA y Excel",
+      "start": "2025-06-20T15:00:00Z",
+      "end": "2025-06-20T16:00:00Z",
+      "url": "https://gdg.community.dev/e/m2wc28/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/BWAI25-EventThumb-01_c1JbAQ8.png",
+      "summary": "El seminario tiene por objetivo analizar los fundamentos de la inteligencia artificial en relación a las hojas de cálculo Excel.\nExplorando a nivel INICIAL las nuevas herramientas que se pueden utilizar. Comenzando con diferentes IAs como Chat GPT, Copilot, Gemini en diferentes tareas relacionadas con las acciones mas realizadas en las hojas Excel."
+    },
+    {
+      "id": 95399,
+      "title": "GDG Santiago de Compostela Summer Edition '25",
+      "start": "2025-06-17T16:00:00Z",
+      "end": "2025-06-17T18:00:00Z",
+      "url": "https://gdg.community.dev/e/m5vcct/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/t2k7QK3r_400x400_IuSQp9H.png",
+      "summary": "Este verano, estrenamos un nuevo formato para celebrar la tecnología, la creatividad y el talento local. Un espacio relajado y cercano donde aprender, compartir ideas y conectar con la comunidad!"
+    },
+    {
+      "id": 92125,
+      "title": "Web and document search in a few clicks with Agent Builder",
+      "start": "2025-05-15T17:00:00Z",
+      "end": "2025-05-15T18:00:00Z",
+      "url": "https://gdg.community.dev/e/mgbbqz/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/BWAI25-EventThumb-01_jQaDg3t.png",
+      "summary": "¿Te gustaría hablar con una web o un PDF como si fuera una persona? 🤯 En Build with AI, Mercedes Rodríguez nos enseñará a crear un asistente inteligente con Agent Builder de Google Cloud. RAG, APIs y casos reales en una sesión técnica, práctica y súper entretenida"
+    },
+    {
+      "id": 93845,
+      "title": "La nueva defensa inteligente: Agentes de IA al servicio de la ciberseguridad en tu empresa",
+      "start": "2025-05-06T16:00:00Z",
+      "end": "2025-05-06T17:00:00Z",
+      "url": "https://gdg.community.dev/e/mymth9/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/BWAI25-EventThumb-01_c1JbAQ8.png",
+      "summary": "Exploraremos cómo los Agentes de Inteligencia Artificial pueden transformar la forma en la que las empresas se protegen frente a ciberataques que cada vez son más sofisticados. Veremos casos prácticos, analizaremos las capacidades presentes y futuras de estos agentes, y cómo se pueden ir integrando progresivamente en entornos corporativos para reforzar la ciberseguridad de forma proactiva, eficien"
+    },
+    {
+      "id": 92716,
+      "title": "Firebase Studio: Revolucionando el Desarrollo de Aplicaciones con IA",
+      "start": "2025-04-22T16:00:00Z",
+      "end": "2025-04-22T17:00:00Z",
+      "url": "https://gdg.community.dev/e/mja24d/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/BWAI25-EventThumb-01_c1JbAQ8.png",
+      "summary": "Explora cómo Firebase Studio está transformando la forma en que los desarrolladores construyen aplicaciones modernas. En esta sesión, conocerás las características clave de Firebase Studio, como su integración con inteligencia artificial para acelerar el desarrollo, mejorar la colaboración en tiempo real y automatizar tareas complejas. "
+    },
+    {
+      "id": 87018,
+      "title": "Inteligencia Artificial en la Detección del Cáncer",
+      "start": "2025-02-26T18:30:00Z",
+      "end": "2025-02-26T20:00:00Z",
+      "url": "https://gdg.community.dev/e/m4rjfk/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/AI_Fy27vEp.png",
+      "summary": "📊🔬 Aprende a usar R y RStudio para entrenar modelos de Machine Learning y predecir el cáncer de mama. Un workshop práctico para transformar datos en conocimiento. 🚀💡"
+    },
+    {
+      "id": 81423,
+      "title": "How to create a simple REST API in Go 🦫",
+      "start": "2025-01-23T18:30:00Z",
+      "end": "2025-01-23T19:30:00Z",
+      "url": "https://gdg.community.dev/e/mz6njh/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/GDG%20Bevy-EventThumb_lIUMG9u.png",
+      "summary": "Descubre cómo construir APIs REST escalables y funcionales con estándares de la industria 🚀 mientras aprendes sobre tecnologías clave como Golang, Docker, Kubernetes y más 🔧. No importa tu nivel, siempre hay algo nuevo que explorar y mejorar 🤝. ¡Únete a esta charla, llena de tips prácticos y curiosidades, y lleva tus habilidades al siguiente nivel! 💻✨"
+    },
+    {
+      "id": 78047,
+      "title": "Cómo Hablar Más Allá del Código 🗣✨",
+      "start": "2024-12-01T16:00:00Z",
+      "end": "2024-12-01T17:00:00Z",
+      "url": "https://gdg.community.dev/e/mzxvgg/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/v_ipt00e7.png",
+      "summary": "\"Cómo Hablar Más Allá del Código\" es un evento diseñado para ayudarte a potenciar tus habilidades de comunicación en el mundo tech 🗣️🌐. Aprende a negociar en entornos profesionales, a expresarte con claridad en entrevistas y a comunicarte de manera efectiva con tus jefes y colegas 🤝✨.  ¡Únete y descubre cómo hacer de la comunicación tu mejor aliado! 🧠💬"
+    },
+    {
+      "id": 75000,
+      "title": "Hacktoberfest 2024 💻🍕👾",
+      "start": "2024-10-26T08:00:00Z",
+      "end": "2024-10-26T19:00:00Z",
+      "url": "https://gdg.community.dev/e/m649tg/",
+      "image": "https://res.cloudinary.com/startup-grind/image/upload/c_fill,w_500,h_500,g_center/c_fill,dpr_2.0,f_auto,g_center,q_auto:good/v1/gcs/platform-data-goog/events/GDG%20Bevy-EventThumb-Blue%20_HSThTrY.png",
+      "summary": "El Hacktoberfest es una oportunidad única para ganar experiencia en proyectos reales de código abierto 🚀, ampliar tu red de contactos en el mundo tech 🤝 y descubrir nuevas tecnologías 🔧. No importa tu nivel, siempre hay algo nuevo que aprender y personas con las que conectar. ¡Únete, colabora y forma parte de la comunidad! 💻✨"
+    }
+  ]
+}

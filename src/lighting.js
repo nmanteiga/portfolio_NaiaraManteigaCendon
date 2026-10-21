@@ -22,5 +22,5 @@ export const LIGHTING = {
     size: 1.25,
   },
   smoke: 0.32, // opacidad del humo
-  floorBump: 1, // relieve de la madera del suelo (bump map de Blender)
+  floorBump: 8, // relieve de la madera del suelo (bump map de Blender)
 };

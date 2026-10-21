@@ -2,6 +2,8 @@ import './style.css';
 import { initRoom } from './room.js';
 import { initTilt } from './tilt.js';
 import { initPolaroids } from './polaroids.js';
+import { initGdg } from './gdg.js';
+import { initGdgOrbit } from './gdg-orbit.js';
 
 // Cabecera 3D
 const hero = document.querySelector('.hero');
@@ -17,6 +19,11 @@ if (import.meta.env.DEV) window.__room = room;
 // Pila de polaroids con mis fotos
 document.querySelectorAll('[data-tilt]').forEach(initTilt);
 document.querySelectorAll('[data-polaroids]').forEach(initPolaroids);
+
+// GDG A Coruña: eventos de Bevy y diseños
+initGdg(document.querySelector('#gdg'));
+const orbit = initGdgOrbit(document.querySelector('[data-gdg-orbit]'));
+if (import.meta.env.DEV) window.__orbit = orbit;
 
 // Fondo de la barra de navegación al hacer scroll
 const nav = document.querySelector('.nav');
