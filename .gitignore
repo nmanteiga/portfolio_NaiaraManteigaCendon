@@ -1,0 +1,5 @@
+node_modules
+dist
+.DS_Store
+contents/models/habitacion_raw.glb
+contents/models/cortinas_raw.glb

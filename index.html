@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naiara Manteiga · Portfolio</title>
+    <meta name="description" content="Naiara Manteiga Cendón — estudiante de Ingeniería Informática en la UDC. IA, neuroevolución, 3D y comunidad tech en A Coruña." />
+    <meta name="theme-color" content="#0b0614" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="preload" href="models/habitacion.glb" as="fetch" crossorigin />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a class="nav__logo" href="#top" aria-label="Inicio">N<span>M</span></a>
+      <nav aria-label="Secciones">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <!-- ── Cabecera: mi habitación modelada en Blender ── -->
+      <section class="hero" aria-label="Presentación">
+        <canvas class="hero__canvas" aria-label="Modelo 3D animado de mi habitación, hecho en Blender"></canvas>
+        <p class="hero__loader" role="status">cargando mi habitación… <span>0%</span></p>
+
+        <div class="hero__copy">
+          <p class="eyebrow">Portfolio · A Coruña</p>
+          <h1 class="hero__title">
+            <span class="hero__first">
+              <svg class="grad-cap" viewBox="0 0 120 84" aria-hidden="true">
+                <path class="grad-cap__base" d="M30 36v20c0 7 13.5 12 30 12s30-5 30-12V36L60 48Z" />
+                <path class="grad-cap__edge" d="M4 26 60 46l56-20v5L60 51 4 31Z" />
+                <path class="grad-cap__board" d="M60 6l56 20-56 20L4 26Z" />
+                <g class="grad-cap__tassel">
+                  <path d="M60 26 98 34v24" />
+                  <path class="grad-cap__fringe" d="M95 57h6l2 13h-10Z" />
+                </g>
+                <circle class="grad-cap__button" cx="60" cy="26" r="3.2" />
+              </svg>Naiara</span><br />
+            <em>Manteiga</em> Cendón
+          </h1>
+          <p class="hero__subtitle">Ingeniería Informática · IA, 3D y comunidad tech</p>
+        </div>
+
+        <p class="hero__hint">
+          <span class="hint--fine">arrastra para mirar la habitación</span>
+          <span class="hint--coarse">modelada y animada por mí en Blender</span>
+        </p>
+        <a class="hero__scroll" href="#sobre-mi" aria-label="Ir a Sobre mí"><span></span></a>
+      </section>
+
+      <!-- ── Sobre mí ── -->
+      <section class="about" id="sobre-mi">
+        <div class="about__grid">
+          <!-- Pila de polaroids: la de delante pasa al fondo cada pocos segundos (o al tocarla) -->
+          <figure class="frame reveal" data-tilt data-polaroids aria-label="Fotos de Naiara">
+            <div class="frame__stack">
+              <div class="frame__card" data-pos="0">
+                <div class="frame__photo">
+                  <img src="img/naiara.jpg" alt="Naiara con la beca de Ingeniería Informática de la UDC" width="900" height="900" />
+                </div>
+                <p class="frame__caption">Orla</p>
+                <div class="frame__glare" aria-hidden="true"></div>
+              </div>
+              <div class="frame__card" data-pos="1">
+                <div class="frame__photo">
+                  <img src="img/naiara2.jpg" alt="Naiara hablando en la mesa de comunidades de la WordCamp Galicia 2026" width="900" height="900" loading="lazy" />
+                </div>
+                <p class="frame__caption">WordCamp Galicia, 2026</p>
+                <div class="frame__glare" aria-hidden="true"></div>
+              </div>
+              <div class="frame__card" data-pos="2">
+                <div class="frame__photo">
+                  <img src="img/naiara3.jpg" alt="Naiara sonriendo y haciendo un corazón con los brazos, con la beca de la Facultade de Informática" width="900" height="900" loading="lazy" />
+                </div>
+                <p class="frame__caption">Graduación 2026</p>
+                <div class="frame__glare" aria-hidden="true"></div>
+              </div>
+            </div>
+          </figure>
+
+          <div class="about__text">
+            <p class="section-label reveal"><span>01</span> Sobre mí</p>
+            <h2 class="about__heading reveal">
+              Programo, investigo<br /> y <em>construyo mundos</em>.
+            </h2>
+
+            <div class="about__bio reveal">
+              <p>
+                Soy estudiante de último curso de <strong>Ingeniería Informática</strong> en la Universidad de A&nbsp;Coruña,
+                en la mención de Computación. En mi TFG investigo cómo mejorar el algoritmo <strong>NEAT</strong>
+                aplicando <strong>Spiking Neural Networks</strong> y aprendizaje R-STDP.
+              </p>
+              <p>
+                Me apasionan la inteligencia artificial, la algoritmia y la investigación aplicada, pero también
+                todo lo que tenga un punto creativo: de los modelos 3D a los videojuegos. La habitación de arriba
+                la modelé y animé yo.
+              </p>
+              <p>
+                Fuera de clase, cofundé <strong>GDG A Coruña</strong>, donde llevo la comunicación y organizo eventos
+                tech para la comunidad gallega.
+              </p>
+            </div>
+
+            <dl class="facts reveal">
+              <div><dt>Base</dt><dd>A Coruña, Galicia</dd></div>
+              <div><dt>Graduación</dt><dd>Febrero 2027</dd></div>
+              <div><dt>Idiomas</dt><dd>Español y gallego nativos · inglés C1</dd></div>
+              <div><dt>Mundo</dt><dd>2 años en EE.&nbsp;UU. · Erasmus en Hungría</dd></div>
+            </dl>
+
+            <div class="cv-actions reveal">
+              <a class="btn btn--primary" href="cv/Naiara_Manteiga_Cendon_CV.pdf" target="_blank" rel="noopener">
+                Ver CV
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+              </a>
+              <a class="btn btn--ghost" href="cv/Naiara_Manteiga_Cendon_CV.pdf" download="Naiara_Manteiga_Cendon_CV.pdf">
+                Descargar PDF
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14" /></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <ul class="highlights" aria-label="Destacados">
+          <li class="reveal">
+            <span class="highlights__num">7.500&nbsp;€</span>
+            <span class="highlights__label">Ganadora del AI Körber Innovathon, Hungría</span>
+          </li>
+          <li class="reveal">
+            <span class="highlights__num">2</span>
+            <span class="highlights__label">hackathons ganados: Körber Innovathon e Impacthon (GDG Santiago)</span>
+          </li>
+          <li class="reveal">
+            <span class="highlights__num">251</span>
+            <span class="highlights__label">asistentes en el DevFest 2025 que co-organizamos</span>
+          </li>
+          <li class="reveal">
+            <span class="highlights__num">2024</span>
+            <span class="highlights__label">cofundadora de Google Developer Group A Coruña</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ── Contacto ── -->
+      <section class="contact" id="contacto">
+        <p class="section-label reveal"><span>✦</span> Contacto</p>
+        <h2 class="contact__heading reveal">¿Hablamos?</h2>
+        <ul class="contact__links reveal">
+          <li><a href="mailto:n.manteiga@udc.es">n.manteiga@udc.es</a></li>
+          <li><a href="https://www.linkedin.com/in/naiara-manteiga-cend%C3%B3n-a55593321/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/nmanteiga" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="https://gdg.community.dev/gdg-a-coruna/" target="_blank" rel="noopener">GDG A Coruña</a></li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Feito con cariño en A Coruña · Naiara Manteiga Cendón</p>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
