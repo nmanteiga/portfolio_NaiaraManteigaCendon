@@ -4,6 +4,7 @@
 //
 // Para añadir un evento nuevo: copia un bloque y cambia `files`, `title`, `date` y `url`.
 // Un archivo que no encaje con ningún bloque sale igualmente, en "Otros".
+// `titleEn` (opcional): título en la versión en inglés de la web; si no está, se usa `title`.
 export const DESIGN_GROUPS = [
   {
     files: /^hacktoberfest2026/,
@@ -44,5 +45,6 @@ export const DESIGN_GROUPS = [
   {
     files: /^others/,
     title: 'Acreditaciones para eventos',
+    titleEn: 'Event badges',
   },
 ];

@@ -3,6 +3,8 @@
 // - video: archivo de public/projects (ya comprimido para la web)
 // - visual: animación generada si aún no hay capturas ('network' = red neuronal, 'protein' = proteína)
 // - size: 'wide' ocupa dos columnas en escritorio
+// - en: textos de la versión en inglés de la web (lo que no esté aquí se queda como en español;
+//   en `links` van solo los textos de los enlaces, en el mismo orden)
 export const PROJECTS = [
   {
     id: 'tfg',
@@ -19,6 +21,16 @@ export const PROJECTS = [
       '(plasticidad modulada por recompensa).',
     stack: ['Python', 'SNNs', 'NEAT', 'R-STDP', 'LaTeX'],
     links: [{ label: 'Código', url: 'https://github.com/nmanteiga/TFG_Spiking-NEAT_Arquitecture_with_R-STDP' }],
+    en: {
+      title: 'Spiking NEAT with R‑STDP',
+      context: "Bachelor's thesis · UDC",
+      status: 'In progress',
+      description:
+        "I'm researching how to improve the NEAT neuroevolution algorithm by replacing classic networks with Spiking Neural Networks, " +
+        'whose neurons communicate through spikes like biological ones, and by adding lifetime learning to each network with R-STDP ' +
+        '(reward-modulated plasticity).',
+      links: ['Code'],
+    },
   },
   {
     id: 'camelia',
@@ -33,6 +45,13 @@ export const PROJECTS = [
       'Yo desplegué el backend en Google Cloud y creé un agente que resume la información de las proteínas y sus comparaciones.',
     stack: ['React', 'TypeScript', 'FastAPI', 'PostgreSQL', 'Google Cloud'],
     links: [{ label: 'Código', url: 'https://github.com/HugoVilr/ImpactThon2026-CAMELIA' }],
+    en: {
+      award: 'Winning project',
+      description:
+        'In 36 hours we built a website to visualize proteins in 3D and in virtual and augmented reality. ' +
+        'I deployed the backend on Google Cloud and built an agent that summarizes protein information and comparisons.',
+      links: ['Code'],
+    },
   },
   {
     id: 'doom',
@@ -46,6 +65,16 @@ export const PROJECTS = [
       'sobre UDP con sockets no bloqueantes y una máquina de estados para mitigar la latencia.',
     stack: ['C', 'Python', 'UDP', 'Redes'],
     links: [{ label: 'Código', url: 'https://github.com/nmanteiga/Doom-gameplay-on-a-satellite' }],
+    en: {
+      title: 'DOOM on a satellite',
+      context: 'HackUDC 2026 · Alén Space challenge',
+      description:
+        'We simulated a link with a satellite in low Earth orbit: the satellite runs DOOM and a ground station controls it, ' +
+        'sending only the pixels that change to save bandwidth. I developed the satellite subsystem in C: an asynchronous network ' +
+        'over UDP with non-blocking sockets and a state machine to mitigate latency.',
+      stack: ['C', 'Python', 'UDP', 'Networking'],
+      links: ['Code'],
+    },
   },
   {
     id: 'lse',
@@ -58,6 +87,15 @@ export const PROJECTS = [
       'Comparamos árboles de decisión, kNN, SVM, redes neuronales, deep learning y DoME.',
     stack: ['Julia', 'Python', 'Visión por computador', 'ML'],
     links: [{ label: 'Código', url: 'https://github.com/nmanteiga/Pr-ctica-AA/tree/main/Pr%C3%A1ctica2' }],
+    en: {
+      title: 'Spanish Sign Language (LSE)',
+      context: 'Machine Learning · UDC',
+      description:
+        'Recognizes the letters of the LSE alphabet in real time through the camera, based on the position of the hand landmarks. ' +
+        'We compared decision trees, kNN, SVM, neural networks, deep learning and DoME.',
+      stack: ['Julia', 'Python', 'Computer vision', 'ML'],
+      links: ['Code'],
+    },
   },
   {
     id: 'brinqo',
@@ -73,6 +111,11 @@ export const PROJECTS = [
       { label: 'Jugar en itch.io', url: 'https://itch.io/jam/brinqo/rate/4288174' },
       { label: 'Código', url: 'https://github.com/nmanteiga/BrinQo-Quantum-GameJam' },
     ],
+    en: {
+      description:
+        "A card game based on quantum physics concepts. I handled the main game programming in Godot, based on my teammates' design.",
+      links: ['Play on itch.io', 'Code'],
+    },
   },
   {
     id: 'habitacion',
@@ -86,5 +129,14 @@ export const PROJECTS = [
       '53 animaciones, simulación de tela en las cortinas, humo y partículas de polvo. Para esta web la exporté a Three.js.',
     stack: ['Blender', 'Three.js', 'Simulación de tela'],
     links: [{ label: 'Verla en 3D', url: '#top' }],
+    en: {
+      title: 'My room in 3D',
+      context: 'University project',
+      description:
+        'The room in the header. I modeled, textured and animated it in Blender during my degree, after many hours of work: ' +
+        '53 animations, cloth simulation on the curtains, smoke and dust particles. For this website I exported it to Three.js.',
+      stack: ['Blender', 'Three.js', 'Cloth simulation'],
+      links: ['See it in 3D'],
+    },
   },
 ];

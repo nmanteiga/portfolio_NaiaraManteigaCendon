@@ -1,5 +1,6 @@
 import { PROJECTS } from './data/projects.js';
 import { openLightbox } from './lightbox.js';
+import { getLang, t } from './i18n.js';
 
 // Capturas de contents/projects, optimizadas por vite-imagetools (portada y tamaño grande)
 const coverFiles = import.meta.glob('../contents/projects/*.{png,jpg,jpeg,webp,PNG,JPG,JPEG}', {
@@ -16,6 +17,13 @@ const fullFiles = import.meta.glob('../contents/projects/*.{png,jpg,jpeg,webp,PN
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 const base = import.meta.env.BASE_URL;
 
+// Proyecto con los textos del idioma actual (los de `en` sustituyen a los de español)
+function localized(p) {
+  if (getLang() !== 'en' || !p.en) return p;
+  const { links, ...en } = p.en;
+  return { ...p, ...en, links: p.links.map((l, i) => ({ ...l, label: links?.[i] ?? l.label })) };
+}
+
 function imagesFor(pattern) {
   if (!pattern) return [];
   return Object.keys(coverFiles)
@@ -26,34 +34,26 @@ function imagesFor(pattern) {
 
 function mediaHtml(p, images) {
   if (p.video) {
-    return `<button type="button" class="project__media" data-open aria-label="Ver el vídeo de ${esc(p.title)}">
+    return `<button type="button" class="project__media" data-open aria-label="${esc(t('videoOf', p.title))}">
       <video src="${base}${p.video.src}" poster="${base}${p.video.poster}" muted loop playsinline preload="none" data-autoplay></video>
       <span class="project__play" aria-hidden="true">▶</span>
     </button>`;
   }
   if (images.length) {
-    return `<button type="button" class="project__media" data-open aria-label="Ver capturas de ${esc(p.title)}">
+    return `<button type="button" class="project__media" data-open aria-label="${esc(t('shotsOf', p.title))}">
       <img src="${images[0].cover}" alt="" loading="lazy" />
-      ${images.length > 1 ? `<span class="project__count">${images.length} capturas</span>` : ''}
+      ${images.length > 1 ? `<span class="project__count">${esc(t('shots', images.length))}</span>` : ''}
     </button>`;
   }
   return `<div class="project__media project__media--visual"><canvas data-visual="${p.visual}" aria-hidden="true"></canvas></div>`;
 }
 
-function render(root) {
-  const grid = root.querySelector('[data-projects]');
-  const media = new Map();
-  grid.innerHTML = PROJECTS.map((p) => {
-    const images = imagesFor(p.images);
-    media.set(p.id, images);
-    const badges = [
-      p.status ? `<span class="badge badge--progress"><span class="pulse" aria-hidden="true"></span>${esc(p.status)}</span>` : '',
-      p.award ? `<span class="badge badge--award">🏆 ${esc(p.award)}</span>` : '',
-    ].join('');
-    return `
-      <article class="project ${p.size === 'wide' ? 'project--wide' : ''} reveal" data-id="${p.id}">
-        ${mediaHtml(p, images)}
-        <div class="project__body">
+function bodyHtml(p) {
+  const badges = [
+    p.status ? `<span class="badge badge--progress"><span class="pulse" aria-hidden="true"></span>${esc(p.status)}</span>` : '',
+    p.award ? `<span class="badge badge--award">🏆 ${esc(p.award)}</span>` : '',
+  ].join('');
+  return `
           <p class="project__context">${esc(p.context)} · ${esc(p.year)}</p>
           <h3 class="project__title">${esc(p.title)}</h3>
           ${badges ? `<div class="project__badges">${badges}</div>` : ''}
@@ -66,18 +66,43 @@ function render(root) {
                 return `<a href="${esc(l.url)}" ${external ? 'target="_blank" rel="noopener"' : ''}>${esc(l.label)} ${external ? '↗' : '↑'}</a>`;
               })
               .join('')}
-          </div>
+          </div>`;
+}
+
+function render(root) {
+  const grid = root.querySelector('[data-projects]');
+  const media = new Map();
+  grid.innerHTML = PROJECTS.map((raw) => {
+    const p = localized(raw);
+    const images = imagesFor(p.images);
+    media.set(p.id, images);
+    return `
+      <article class="project ${p.size === 'wide' ? 'project--wide' : ''} reveal" data-id="${p.id}">
+        ${mediaHtml(p, images)}
+        <div class="project__body">${bodyHtml(p)}
         </div>
       </article>`;
   }).join('');
+
+  // Al cambiar de idioma solo se cambian los textos (las animaciones y vídeos siguen como estaban)
+  addEventListener('langchange', () => {
+    grid.querySelectorAll('.project').forEach((article) => {
+      const p = localized(PROJECTS.find((x) => x.id === article.dataset.id));
+      article.querySelector('.project__body').innerHTML = bodyHtml(p);
+      const button = article.querySelector('[data-open]');
+      if (button) button.setAttribute('aria-label', p.video ? t('videoOf', p.title) : t('shotsOf', p.title));
+      const count = article.querySelector('.project__count');
+      if (count) count.textContent = t('shots', media.get(p.id).length);
+    });
+  });
 
   // Abrir capturas o vídeo a pantalla completa
   grid.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-open]');
     if (!btn) return;
-    const p = PROJECTS.find((x) => x.id === btn.closest('.project').dataset.id);
+    const p = localized(PROJECTS.find((x) => x.id === btn.closest('.project').dataset.id));
     if (p.video) openLightbox([{ type: 'video', src: base + p.video.src, poster: base + p.video.poster }], 0, p.title);
-    else openLightbox(media.get(p.id).map((img, i) => ({ src: img.full, alt: `${p.title}: captura ${i + 1}` })), 0, p.title);
+    else openLightbox(media.get(p.id).map((img, i) => ({ src: img.full, alt: t('shotN', p.title, i + 1) })), 0, p.title);
   });
 
   // Los vídeos solo se reproducen (en silencio) mientras se ven

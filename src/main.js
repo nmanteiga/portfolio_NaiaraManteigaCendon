@@ -1,4 +1,5 @@
 import './style.css';
+import { initI18n } from './i18n.js';
 import { initRoom } from './room.js';
 import { initTilt } from './tilt.js';
 import { initPolaroids } from './polaroids.js';
@@ -7,9 +8,12 @@ import { initGdgOrbit } from './gdg-orbit.js';
 import { initProjects } from './projects.js';
 import { initCursor } from './cursor.js';
 
+// Idioma (español / inglés) antes de pintar nada más
+initI18n();
+
 // Cabecera 3D
 const hero = document.querySelector('.hero');
-const loaderPct = hero.querySelector('.hero__loader span');
+const loaderPct = hero.querySelector('[data-loader-pct]');
 const room = initRoom({
   canvas: hero.querySelector('.hero__canvas'),
   section: hero,

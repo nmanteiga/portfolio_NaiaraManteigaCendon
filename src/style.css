@@ -113,6 +113,29 @@ em { font-style: italic; }
   transition: color 0.2s;
 }
 .nav nav a:hover { color: var(--text); }
+.nav__right { display: flex; align-items: center; gap: clamp(14px, 3vw, 32px); }
+
+/* Botón ES / EN: el idioma activo se ve resaltado */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  font: inherit;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: rgb(205 182 255 / 0.06);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.lang-toggle:hover { border-color: rgb(205 182 255 / 0.4); background: rgb(205 182 255 / 0.12); }
+.lang-toggle [aria-hidden] { opacity: 0.5; }
+.lang-toggle [data-lang] { transition: color 0.2s; }
+html[lang="es"] .lang-toggle [data-lang="es"],
+html[lang="en"] .lang-toggle [data-lang="en"] { color: var(--text); font-weight: 600; }
 
 /* ───────────────── Hero ───────────────── */
 .hero {

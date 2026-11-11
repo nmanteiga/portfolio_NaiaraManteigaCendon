@@ -17,20 +17,26 @@
     <div class="grain" aria-hidden="true"></div>
 
     <header class="nav">
-      <a class="nav__logo" href="#top" aria-label="Inicio">N<span>M</span></a>
-      <nav aria-label="Secciones">
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#gdg">GDG</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+      <a class="nav__logo" href="#top" aria-label="Inicio" data-i18n-attr="aria-label:navHome">N<span>M</span></a>
+      <div class="nav__right">
+        <nav aria-label="Secciones" data-i18n-attr="aria-label:navSections">
+          <a href="#sobre-mi" data-i18n="navAbout">Sobre mí</a>
+          <a href="#gdg">GDG</a>
+          <a href="#proyectos" data-i18n="navProjects">Proyectos</a>
+          <a href="#contacto" data-i18n="navContact">Contacto</a>
+        </nav>
+        <!-- Idioma: se elige solo según el navegador, y este botón lo cambia (src/i18n.js) -->
+        <button type="button" class="lang-toggle" data-lang-toggle aria-label="Cambiar el idioma a inglés" data-i18n-attr="aria-label:langToggle">
+          <span data-lang="es">ES</span><span aria-hidden="true">/</span><span data-lang="en">EN</span>
+        </button>
+      </div>
     </header>
 
     <main id="top">
       <!-- ── Cabecera: mi habitación modelada en Blender ── -->
-      <section class="hero" aria-label="Presentación">
-        <canvas class="hero__canvas" aria-label="Modelo 3D animado de mi habitación, hecho en Blender"></canvas>
-        <p class="hero__loader" role="status">cargando mi habitación… <span>0%</span></p>
+      <section class="hero" aria-label="Presentación" data-i18n-attr="aria-label:hero">
+        <canvas class="hero__canvas" aria-label="Modelo 3D animado de mi habitación, hecho en Blender" data-i18n-attr="aria-label:heroCanvas"></canvas>
+        <p class="hero__loader" role="status"><span data-i18n="heroLoader">cargando mi habitación…</span> <span data-loader-pct>0%</span></p>
 
         <div class="hero__copy">
           <p class="eyebrow">Portfolio · A Coruña</p>
@@ -48,107 +54,107 @@
               </svg>Naiara</span><br />
             <em>Manteiga</em> Cendón
           </h1>
-          <p class="hero__subtitle">Ingeniería Informática · IA, 3D y comunidad tech</p>
+          <p class="hero__subtitle" data-i18n="heroSubtitle">Ingeniería Informática · IA, 3D y comunidad tech</p>
         </div>
 
         <p class="hero__hint">
-          <span class="hint--fine">arrastra para mirar la habitación</span>
-          <span class="hint--coarse">modelada y animada por mí en Blender</span>
+          <span class="hint--fine" data-i18n="heroHintFine">arrastra para mirar la habitación</span>
+          <span class="hint--coarse" data-i18n="heroHintCoarse">modelada y animada por mí en Blender</span>
         </p>
-        <a class="hero__scroll" href="#sobre-mi" aria-label="Ir a Sobre mí"><span></span></a>
+        <a class="hero__scroll" href="#sobre-mi" aria-label="Ir a Sobre mí" data-i18n-attr="aria-label:heroScroll"><span></span></a>
       </section>
 
       <!-- ── Sobre mí ── -->
       <section class="about" id="sobre-mi">
         <div class="about__grid">
           <!-- Pila de polaroids: la de delante pasa al fondo cada pocos segundos (o al tocarla) -->
-          <figure class="frame reveal" data-tilt data-polaroids aria-label="Fotos de Naiara">
+          <figure class="frame reveal" data-tilt data-polaroids aria-label="Fotos de Naiara" data-i18n-attr="aria-label:photos">
             <div class="frame__stack">
               <div class="frame__card" data-pos="0">
                 <div class="frame__photo">
-                  <img src="img/naiara.jpg" alt="Naiara con la beca de Ingeniería Informática de la UDC" width="900" height="900" />
+                  <img src="img/naiara.jpg" alt="Naiara con la beca de Ingeniería Informática de la UDC" data-i18n-attr="alt:photo1" width="900" height="900" />
                 </div>
-                <p class="frame__caption">Orla</p>
+                <p class="frame__caption" data-i18n="caption1">Orla</p>
                 <div class="frame__glare" aria-hidden="true"></div>
               </div>
               <div class="frame__card" data-pos="1">
                 <div class="frame__photo">
-                  <img src="img/naiara2.jpg" alt="Naiara hablando en la mesa de comunidades de la WordCamp Galicia 2026" width="900" height="900" loading="lazy" />
+                  <img src="img/naiara2.jpg" alt="Naiara hablando en la mesa de comunidades de la WordCamp Galicia 2026" data-i18n-attr="alt:photo2" width="900" height="900" loading="lazy" />
                 </div>
                 <p class="frame__caption">WordCamp Galicia, 2026</p>
                 <div class="frame__glare" aria-hidden="true"></div>
               </div>
               <div class="frame__card" data-pos="2">
                 <div class="frame__photo">
-                  <img src="img/naiara3.jpg" alt="Naiara sonriendo y haciendo un corazón con los brazos, con la beca de la Facultade de Informática" width="900" height="900" loading="lazy" />
+                  <img src="img/naiara3.jpg" alt="Naiara sonriendo y haciendo un corazón con los brazos, con la beca de la Facultade de Informática" data-i18n-attr="alt:photo3" width="900" height="900" loading="lazy" />
                 </div>
-                <p class="frame__caption">Graduación 2026</p>
+                <p class="frame__caption" data-i18n="caption3">Graduación 2026</p>
                 <div class="frame__glare" aria-hidden="true"></div>
               </div>
             </div>
           </figure>
 
           <div class="about__text">
-            <p class="section-label reveal"><span>01</span> Sobre mí</p>
-            <h2 class="about__heading reveal">
+            <p class="section-label reveal" data-i18n="aboutLabel"><span>01</span> Sobre mí</p>
+            <h2 class="about__heading reveal" data-i18n="aboutHeading">
               Programo y sobrevivo<br /> a base de <em>cafeína</em>.
             </h2>
 
             <div class="about__bio reveal">
-              <p>
+              <p data-i18n="aboutBio1">
                 Soy estudiante de último curso de <strong>Ingeniería Informática</strong> en la Universidad de A&nbsp;Coruña,
                 en la mención de Computación. En mi TFG investigo cómo mejorar el algoritmo 
-                <strong>NeuroEvolution of Augmented Toplogies (NEAT)</strong> aplicando <strong>Spiking Neural Networks (SNNs)</strong> 
+                <strong>NeuroEvolution of Augmented Topologies (NEAT)</strong> aplicando <strong>Spiking Neural Networks (SNNs)</strong> 
                 y aprendizaje con <strong>Reward-Modulated Spike-Timing-Dependent Plasticity (R-STDP)</strong>.
               </p>
-              <p>
+              <p data-i18n="aboutBio2">
                 Me apasionan la inteligencia artificial (sobre todo el machine learning y business intelligence), 
                 la algoritmia y la investigación aplicada, pero también todo lo que tenga un punto creativo: de los 
                 modelos 3D a los videojuegos (la habitación de arriba la modelé y animé yo). Gracias a los videojuegos
                 decidí a los 10 años que sería ingeniera informática y hago todo lo posible por cumplir esa meta desde entonces.
               </p>
-              <p>
+              <p data-i18n="aboutBio3">
                 Fuera de clase, cofundé <strong>GDG A Coruña</strong>, donde llevo la comunicación y organizo eventos
                 tech para la comunidad gallega.
               </p>
             </div>
 
             <dl class="facts reveal">
-              <div><dt>Base</dt><dd>A Coruña, Galicia</dd></div>
-              <div><dt>Graduación</dt><dd>Febrero 2027</dd></div>
-              <div><dt>Idiomas</dt><dd>Español y gallego nativos · inglés C2.1</dd></div>
-              <div><dt>Mundo</dt><dd>2 años en EE.&nbsp;UU. · Erasmus en Hungría</dd></div>
+              <div><dt data-i18n="factBase">Base</dt><dd data-i18n="factBaseValue">A Coruña, Galicia</dd></div>
+              <div><dt data-i18n="factGrad">Graduación</dt><dd data-i18n="factGradValue">Febrero 2027</dd></div>
+              <div><dt data-i18n="factLangs">Idiomas</dt><dd data-i18n="factLangsValue">Español y gallego nativos · inglés C2.1</dd></div>
+              <div><dt data-i18n="factWorld">Mundo</dt><dd data-i18n="factWorldValue">2 años en EE.&nbsp;UU. · Erasmus en Hungría</dd></div>
             </dl>
 
             <div class="cv-actions reveal">
-              <a class="btn btn--primary" href="cv/Naiara_Manteiga_Cendon_CV.pdf" target="_blank" rel="noopener">
-                Ver CV
+              <a class="btn btn--primary" href="cv/Naiara_Manteiga_Cendon_CV.pdf" target="_blank" rel="noopener" data-i18n-attr="href:cvHref">
+                <span data-i18n="cvView">Ver CV</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
               </a>
-              <a class="btn btn--ghost" href="cv/Naiara_Manteiga_Cendon_CV.pdf" download="Naiara_Manteiga_Cendon_CV.pdf">
-                Descargar PDF
+              <a class="btn btn--ghost" href="cv/Naiara_Manteiga_Cendon_CV.pdf" download="Naiara_Manteiga_Cendon_CV.pdf" data-i18n-attr="href:cvHref;download:cvFile">
+                <span data-i18n="cvDownload">Descargar PDF</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14" /></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <ul class="highlights" aria-label="Destacados">
+        <ul class="highlights" aria-label="Destacados" data-i18n-attr="aria-label:highlights">
           <li class="reveal">
-            <span class="highlights__num">7.500&nbsp;€</span>
-            <span class="highlights__label">Ganadora del AI Körber Innovathon, Hungría</span>
+            <span class="highlights__num" data-i18n="hl1Num">7.500&nbsp;€</span>
+            <span class="highlights__label" data-i18n="hl1">Ganadora del AI Körber Innovathon, Hungría</span>
           </li>
           <li class="reveal">
             <span class="highlights__num">2</span>
-            <span class="highlights__label">hackathons ganados: Körber Innovathon e Impacthon (GDG Santiago)</span>
+            <span class="highlights__label" data-i18n="hl2">hackathons ganados: Körber Innovathon e Impacthon (GDG Santiago)</span>
           </li>
           <li class="reveal">
             <span class="highlights__num">251</span>
-            <span class="highlights__label">asistentes en el DevFest 2025 que co-organizamos</span>
+            <span class="highlights__label" data-i18n="hl3">asistentes en el DevFest 2025 que co-organizamos</span>
           </li>
           <li class="reveal">
             <span class="highlights__num">2024</span>
-            <span class="highlights__label">cofundadora de Google Developer Group A Coruña</span>
+            <span class="highlights__label" data-i18n="hl4">cofundadora de Google Developer Group A Coruña</span>
           </li>
         </ul>
       </section>
@@ -157,20 +163,20 @@
       <section class="gdg" id="gdg">
         <div class="gdg__intro">
           <div class="gdg__text">
-            <p class="section-label reveal"><span>02</span> Comunidad</p>
-            <h2 class="reveal">Construyendo comunidad <em>con sentidiño</em>.</h2>
-            <p class="gdg__lead reveal">
+            <p class="section-label reveal" data-i18n="gdgLabel"><span>02</span> Comunidad</p>
+            <h2 class="reveal" data-i18n="gdgHeading">Construyendo comunidad <em>con sentidiño</em>.</h2>
+            <p class="gdg__lead reveal" data-i18n="gdgLead">
               En agosto de 2024 cofundé <strong>Google Developer Group A Coruña</strong>, donde soy Communication Manager.
               Organizamos charlas, talleres y hackathons en A Coruña, en otras partes de Galicia y online. Yo principalmente 
               dirijo el equipo creativo: la imagen de cada evento, los diseños y las campañas en redes.
             </p>
             <ul class="gdg__stats reveal">
-              <li><strong data-gdg-count>26</strong> eventos organizados y coorganizados</li>
-              <li><strong>251</strong> asistentes en el DevFest 2025</li>
-              <li><strong>~80</strong> participantes en el Hacktoberfest 2025</li>
+              <li><strong data-gdg-count>26</strong> <span data-i18n="gdgStat1">eventos organizados y coorganizados</span></li>
+              <li><strong>251</strong> <span data-i18n="gdgStat2">asistentes en el DevFest 2025</span></li>
+              <li><strong>~80</strong> <span data-i18n="gdgStat3">participantes en el Hacktoberfest 2025</span></li>
             </ul>
             <a class="btn btn--ghost reveal" href="https://gdg.community.dev/gdg-a-coruna/" target="_blank" rel="noopener">
-              GDG A Coruña en Bevy
+              <span data-i18n="gdgBevy">GDG A Coruña en Bevy</span>
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
             </a>
           </div>
@@ -188,10 +194,10 @@
 
         <div class="gdg__events">
           <div class="gdg__events-head">
-            <h3>Eventos que hemos hecho</h3>
+            <h3 data-i18n="gdgPast">Eventos que hemos hecho</h3>
             <div class="track-nav">
-              <button type="button" data-events-prev aria-label="Eventos anteriores">←</button>
-              <button type="button" data-events-next aria-label="Más eventos">→</button>
+              <button type="button" data-events-prev aria-label="Eventos anteriores" data-i18n-attr="aria-label:eventsPrev">←</button>
+              <button type="button" data-events-next aria-label="Más eventos" data-i18n-attr="aria-label:eventsNext">→</button>
             </div>
           </div>
           <ol class="events-track" data-gdg-events></ol>
@@ -199,19 +205,18 @@
 
         <!-- Se rellena con las imágenes de contents/gdg (src/gdg.js) -->
         <div class="gdg__designs" data-gdg-designs hidden>
-          <h3>Mis diseños para GDG</h3>
-          <p class="gdg__designs-intro">Aquí comparto algunos de los diseños que he hecho a mano a lo largo de mi
-            trayectoria en GDG, algunos no están subidos, pero esto es un pequeño resumen.
-          </track>.</p>
+          <h3 data-i18n="gdgDesigns">Mis diseños para GDG</h3>
+          <p class="gdg__designs-intro" data-i18n="gdgDesignsIntro">Aquí comparto algunos de los diseños que he hecho a mano a lo largo de mi
+            trayectoria en GDG, algunos no están subidos, pero esto es un pequeño resumen.</p>
           <div data-designs-list></div>
         </div>
       </section>
 
       <!-- ── Proyectos ── -->
       <section class="projects" id="proyectos">
-        <p class="section-label reveal"><span>03</span> Proyectos</p>
-        <h2 class="reveal">Cosas que he <em>construido</em>.</h2>
-        <p class="projects__intro reveal">
+        <p class="section-label reveal" data-i18n="projectsLabel"><span>03</span> Proyectos</p>
+        <h2 class="reveal" data-i18n="projectsHeading">Cosas que he <em>construido</em>.</h2>
+        <p class="projects__intro reveal" data-i18n="projectsIntro">
           De la investigación de mi TFG a hackathons de 36 horas: proyectos personales, de la carrera y de competiciones. Esperemos que esta colección vaya creciendo poco a poco ;)
           NOTA: el código del Körber Innovathon no está disponible ya que la empresa <strong>compró el proyecto</strong> y se requirió firmar 
           un NDA para su realización.
@@ -219,15 +224,15 @@
         <!-- Se rellena desde src/data/projects.js (src/projects.js) -->
         <div class="projects-grid" data-projects></div>
         <a class="btn btn--ghost projects__more reveal" href="https://github.com/nmanteiga" target="_blank" rel="noopener">
-          Más en mi GitHub
+          <span data-i18n="projectsMore">Más en mi GitHub</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
         </a>
       </section>
 
       <!-- ── Contacto ── -->
       <section class="contact" id="contacto">
-        <p class="section-label reveal"><span>✦</span> Contacto</p>
-        <h2 class="contact__heading reveal">¿Hablamos?</h2>
+        <p class="section-label reveal" data-i18n="contactLabel"><span>✦</span> Contacto</p>
+        <h2 class="contact__heading reveal" data-i18n="contactHeading">¿Hablamos?</h2>
         <ul class="contact__links reveal">
           <li><a href="mailto:n.manteiga@udc.es">n.manteiga@udc.es</a></li>
           <li><a href="https://www.linkedin.com/in/naiara-manteiga-cend%C3%B3n-a55593321/" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -238,19 +243,19 @@
     </main>
 
     <footer class="footer">
-      <p>Feito con cariño en A Coruña · Naiara Manteiga Cendón</p>
+      <p data-i18n="footer">Feito con cariño en A Coruña · Naiara Manteiga Cendón</p>
       <button type="button" class="cat-toggle" data-cat-toggle hidden></button>
     </footer>
 
-    <dialog class="lightbox" data-lightbox aria-label="Imagen ampliada">
+    <dialog class="lightbox" data-lightbox aria-label="Imagen ampliada" data-i18n-attr="aria-label:lightbox">
       <figure>
         <img alt="" />
         <video controls playsinline muted loop hidden></video>
         <figcaption></figcaption>
       </figure>
-      <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Diseño anterior">←</button>
-      <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Diseño siguiente">→</button>
-      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Cerrar">×</button>
+      <button type="button" class="lightbox__nav lightbox__nav--prev" data-lightbox-prev aria-label="Diseño anterior" data-i18n-attr="aria-label:lightboxPrev">←</button>
+      <button type="button" class="lightbox__nav lightbox__nav--next" data-lightbox-next aria-label="Diseño siguiente" data-i18n-attr="aria-label:lightboxNext">→</button>
+      <button type="button" class="lightbox__close" data-lightbox-close aria-label="Cerrar" data-i18n-attr="aria-label:lightboxClose">×</button>
     </dialog>
 
     <script type="module" src="/src/main.js"></script>

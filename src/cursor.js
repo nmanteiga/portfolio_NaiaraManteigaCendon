@@ -1,3 +1,5 @@
+import { t } from './i18n.js';
+
 // Cursor personalizado (puntito + aro con retraso) y mi gata siberiana siguiendo al ratón.
 // Solo en ordenador (puntero fino) y sin "reducir movimiento" activado.
 
@@ -151,10 +153,11 @@ function initCat(mouse) {
     el.hidden = hidden;
     if (toggle) {
       toggle.hidden = false;
-      toggle.textContent = hidden ? '🐾 Mostrar a mi gata' : '🐾 Ocultar a mi gata';
+      toggle.textContent = hidden ? t('catShow') : t('catHide');
     }
   };
   applyHidden();
+  addEventListener('langchange', applyHidden);
   toggle?.addEventListener('click', () => {
     hidden = !hidden;
     try {

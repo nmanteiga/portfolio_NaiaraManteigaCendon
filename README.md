@@ -18,6 +18,7 @@ Escanea el QR para abrirlo en el móvil 📱
 - **Sobre mí**: presentación, CV para ver o descargar y una pila de polaroids interactiva.
 - **GDG A Coruña**: los eventos se cargan **en directo desde Bevy**, y se muestran el próximo evento y mis diseños para la comunidad, agrupados por año.
 - **Proyectos**: mi TFG, hackathons, prácticas de la carrera y game jams.
+- **En español e inglés**: se elige sola según el idioma del navegador y se puede cambiar con el botón ES / EN. Los textos en inglés están en `src/data/translations.js` y `src/data/projects.js`.
 - Y una sorpresa en ordenador: mi gata siberiana persigue el cursor 🐈
 
 ## 🛠️ Tecnologías
@@ -42,7 +43,8 @@ Cada `push` a `main` compila y publica la web automáticamente en GitHub Pages (
 | Carpeta / archivo | Contenido |
 | --- | --- |
 | `contents/` | Fotos, diseños de GDG, capturas de proyectos y modelos 3D originales |
-| `src/data/projects.js` | Textos y enlaces de la sección de proyectos |
+| `src/data/projects.js` | Textos y enlaces de la sección de proyectos (también en inglés) |
+| `src/data/translations.js` | Textos de la web en inglés |
 | `src/data/gdg-designs.js` | A qué evento pertenece cada diseño |
 | `src/lighting.js` | Ajustes de luces, polvo y humo de la habitación |
 | `public/` | CV, modelos optimizados y vídeos |

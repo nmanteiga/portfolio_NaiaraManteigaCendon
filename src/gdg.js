@@ -2,6 +2,7 @@ import snapshot from './data/gdg-events.json';
 import { fetchGdgEvents } from './gdg-api.js';
 import { DESIGN_GROUPS } from './data/gdg-designs.js';
 import { openLightbox } from './lightbox.js';
+import { getLang, t } from './i18n.js';
 
 // Diseños: cualquier imagen que se deje en contents/gdg aparece sola en la galería, agrupada por
 // evento según src/data/gdg-designs.js. Si se llama "logo" (logo.png…) se usa como logo de la sección.
@@ -19,9 +20,11 @@ const fullFiles = import.meta.glob('../contents/gdg/*.{png,jpg,jpeg,webp,avif,PN
 // SVG y GIF se sirven tal cual (no se pueden convertir sin perder vectores/animación)
 const rawFiles = import.meta.glob('../contents/gdg/*.{svg,gif,SVG,GIF}', { eager: true, query: '?url', import: 'default' });
 
-const dateFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Europe/Madrid' });
-const longDateFmt = new Intl.DateTimeFormat('es-ES', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Madrid' });
-const timeFmt = new Intl.DateTimeFormat('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
+// Fechas en el idioma de la web (español o inglés)
+const fmt = (options) => new Intl.DateTimeFormat(t('locale'), options).format.bind(null);
+const dateFmt = () => fmt({ day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Europe/Madrid' });
+const longDateFmt = () => fmt({ weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Madrid' });
+const timeFmt = () => fmt({ hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Madrid' });
 
 const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 // Bevy solo debería devolver enlaces/imágenes suyos; por si acaso, solo se aceptan https
@@ -31,12 +34,15 @@ const capitalize = (s) => s.charAt(0).toUpperCase() + s.slice(1);
 
 function daysUntil(date) {
   const days = Math.ceil((date - Date.now()) / 86_400_000);
-  if (days <= 0) return 'hoy';
-  if (days === 1) return 'mañana';
-  return `en ${days} días`;
+  if (days <= 0) return t('today');
+  if (days === 1) return t('tomorrow');
+  return t('inDays', days);
 }
 
+let lastEvents = [];
+
 function renderEvents(root, events) {
+  lastEvents = events;
   const now = Date.now();
   // Se reparten por fecha (no por el estado de Bevy) para que la copia de respaldo no quede desfasada
   const upcoming = events.filter((e) => new Date(e.end) >= now).sort((a, b) => new Date(a.start) - new Date(b.start));
@@ -54,24 +60,25 @@ function renderEvents(root, events) {
         <img src="${safeUrl(next.image)}" alt="" loading="lazy" />
       </a>
       <div class="next-event__body">
-        <p class="next-event__badge"><span class="pulse" aria-hidden="true"></span> Próximo evento · ${daysUntil(start)}</p>
+        <p class="next-event__badge"><span class="pulse" aria-hidden="true"></span> ${esc(t('nextEvent'))} · ${daysUntil(start)}</p>
         <h3 class="next-event__title">${esc(next.title)}</h3>
-        <p class="next-event__date">${esc(capitalize(longDateFmt.format(start)))} · ${esc(timeFmt.format(start))}</p>
+        <p class="next-event__date">${esc(capitalize(longDateFmt()(start)))} · ${esc(timeFmt()(start))}</p>
         ${next.summary ? `<p class="next-event__summary">${esc(next.summary)}</p>` : ''}
         <a class="btn btn--primary" href="${safeUrl(next.url)}" target="_blank" rel="noopener">
-          Apúntate en Bevy
+          ${esc(t('signUp'))}
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
         </a>
       </div>`;
   }
 
+  const formatDate = dateFmt();
   root.querySelector('[data-gdg-events]').innerHTML = past
     .map(
       (e) => `
       <li class="event-card">
         <a href="${safeUrl(e.url)}" target="_blank" rel="noopener">
           <img src="${safeUrl(e.image)}" alt="" loading="lazy" width="500" height="500" />
-          <time datetime="${esc(e.start)}">${esc(dateFmt.format(new Date(e.start)))}</time>
+          <time datetime="${esc(e.start)}">${esc(formatDate(new Date(e.start)))}</time>
           <h4>${esc(e.title)}</h4>
         </a>
       </li>`,
@@ -88,7 +95,11 @@ function initEventsTrack(root) {
 
 const baseName = (path) => path.split('/').pop().replace(/\.[^.]+$/, '');
 const naturalSort = (a, b) => a.localeCompare(b, 'es', { numeric: true });
-const monthYearFmt = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const monthYearFmt = () => fmt({ day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+// Título del evento de un grupo de diseños en el idioma de la web
+const groupTitle = (g) => (g.other ? t('otherDesigns') : getLang() === 'en' ? (g.titleEn ?? g.title) : g.title);
+
+const OTHER_GROUP = { other: true };
 
 function collectDesigns() {
   const files = [
@@ -101,7 +112,7 @@ function collectDesigns() {
   const groups = new Map();
   for (const file of files) {
     if (file === logo) continue;
-    const def = DESIGN_GROUPS.find((g) => g.files.test(file.name)) ?? { title: 'Otros diseños' };
+    const def = DESIGN_GROUPS.find((g) => g.files.test(file.name)) ?? OTHER_GROUP;
     if (!groups.has(def)) groups.set(def, { ...def, items: [] });
     groups.get(def).items.push(file);
   }
@@ -112,20 +123,25 @@ function collectDesigns() {
   return { logo, groups: list };
 }
 
+let designGroups = [];
+
 function renderDesigns(root) {
   const { logo, groups } = collectDesigns();
+  designGroups = groups;
 
   const logoBox = root.querySelector('[data-gdg-logo]');
-  if (logo) logoBox.innerHTML = `<img src="${logo.thumb}" alt="Logo de GDG A Coruña" />`;
+  if (logo) logoBox.innerHTML = `<img src="${logo.thumb}" alt="${esc(t('gdgLogoAlt'))}" />`;
 
   const box = root.querySelector('[data-gdg-designs]');
   box.hidden = groups.length === 0;
   const list = box.querySelector('[data-designs-list]');
+  // Al cambiar de idioma se vuelven a pintar: se conservan abiertas las cajas que lo estaban
+  const open = new Set([...list.querySelectorAll('details[open]')].map((d) => d.dataset.year));
 
   // Agrupados por año de organización del evento
   const years = new Map();
   for (const g of groups) {
-    const year = g.date ? g.date.slice(0, 4) : 'Otros';
+    const year = g.date ? g.date.slice(0, 4) : 'other';
     if (!years.has(year)) years.set(year, []);
     years.get(year).push(g);
   }
@@ -134,15 +150,14 @@ function renderDesigns(root) {
     .map(
       ([year, yearGroups]) => {
         const items = yearGroups.flatMap((g) => g.items);
-        const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
         // Caja cerrada por año: miniaturas en abanico + resumen; al abrirla, los eventos y diseños
         return `
-      <details class="designs-year">
+      <details class="designs-year" data-year="${esc(year)}" ${open.has(year) ? 'open' : ''}>
         <summary>
-          <span class="designs-year__label">${esc(year)}</span>
+          <span class="designs-year__label">${esc(year === 'other' ? t('otherYear') : year)}</span>
           <span class="designs-year__info">
-            <span class="designs-year__count">${plural(yearGroups.length, 'evento', 'eventos')} · ${plural(items.length, 'diseño', 'diseños')}</span>
-            <span class="designs-year__titles">${yearGroups.map((g) => esc(g.title)).join(' · ')}</span>
+            <span class="designs-year__count">${t('events', yearGroups.length)} · ${t('designs', items.length)}</span>
+            <span class="designs-year__titles">${yearGroups.map((g) => esc(groupTitle(g))).join(' · ')}</span>
           </span>
           <span class="designs-year__fan" aria-hidden="true">
             ${items
@@ -157,15 +172,15 @@ function renderDesigns(root) {
             .map((g) => {
               const gi = groups.indexOf(g);
               const meta = [
-                g.date ? esc(monthYearFmt.format(new Date(g.date))) : '',
-                g.url ? `<a href="${safeUrl(g.url)}" target="_blank" rel="noopener">Ver evento ↗</a>` : '',
+                g.date ? esc(monthYearFmt()(new Date(g.date))) : '',
+                g.url ? `<a href="${safeUrl(g.url)}" target="_blank" rel="noopener">${esc(t('seeEvent'))}</a>` : '',
               ]
                 .filter(Boolean)
                 .join(' · ');
               return `
               <article class="design-group">
                 <header class="design-group__head">
-                  <h5>${esc(g.title)}</h5>
+                  <h5>${esc(groupTitle(g))}</h5>
                   ${meta ? `<p>${meta}</p>` : ''}
                 </header>
                 <ul class="designs-grid">
@@ -173,7 +188,7 @@ function renderDesigns(root) {
                     .map(
                       (item, ii) => `
                     <li><button type="button" class="design" data-group="${gi}" data-index="${ii}">
-                      <img src="${item.thumb}" alt="${esc(g.title)}: diseño ${ii + 1}" loading="lazy" />
+                      <img src="${item.thumb}" alt="${esc(t('designN', groupTitle(g), ii + 1))}" loading="lazy" />
                     </button></li>`,
                     )
                     .join('')}
@@ -186,25 +201,29 @@ function renderDesigns(root) {
       },
     )
     .join('');
-
-  initLightbox(list, groups);
 }
 
 // Al pulsar un diseño se abre el visor con los del mismo evento
-function initLightbox(list, groups) {
-  list.addEventListener('click', (e) => {
+function initLightbox(root) {
+  root.querySelector('[data-designs-list]').addEventListener('click', (e) => {
     const btn = e.target.closest('.design');
     if (!btn) return;
-    const group = groups[Number(btn.dataset.group)];
-    const items = group.items.map((it, i) => ({ src: it.full, alt: `${group.title}: diseño ${i + 1}` }));
-    openLightbox(items, Number(btn.dataset.index), group.title);
+    const group = designGroups[Number(btn.dataset.group)];
+    const title = groupTitle(group);
+    const items = group.items.map((it, i) => ({ src: it.full, alt: t('designN', title, i + 1) }));
+    openLightbox(items, Number(btn.dataset.index), title);
   });
 }
 
 export function initGdg(root) {
   if (!root) return;
   renderDesigns(root);
+  initLightbox(root);
   initEventsTrack(root);
+  addEventListener('langchange', () => {
+    renderDesigns(root);
+    renderEvents(root, lastEvents);
+  });
 
   // 1) Copia guardada en el build: se ve al instante y sirve sin conexión
   renderEvents(root, snapshot.events);
